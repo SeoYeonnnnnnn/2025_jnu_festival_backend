@@ -18,3 +18,10 @@ def create_booth(db: Session, booth: schemas.BoothCreate):
     db.commit()
     db.refresh(db_booth)
     return db_booth
+
+def delete_booth(db: Session, booth_id: int):
+    db_booth = db.query(models.Booth).filter(models.Booth.id == booth_id).first()
+    if db_booth:
+        db.delete(db_booth)
+        db.commit()
+    return db_booth
