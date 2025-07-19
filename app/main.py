@@ -16,6 +16,7 @@ app = FastAPI()
 # 프론트엔드(React)가 실행되는 주소(http://localhost:5173)에서의 요청을 허용합니다.
 origins = [
     "http://localhost:5173",
+    "http://localhost",
     "http://127.0.0.1:5173",
     "http://172.16.6.58:5173",
 ]
